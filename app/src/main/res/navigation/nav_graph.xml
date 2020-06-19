@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dsmathang"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/dsmathang"
+        android:name="vn.edu.ntu.votrungha.navigationproduct.dsmathang"
+        android:label="fragment_dsmathang"
+        tools:layout="@layout/fragment_dsmathang" >
+        <action
+            android:id="@+id/action_dsmathang_to_shopping"
+            app:destination="@id/shopping"
+            app:popUpTo="@+id/dsmathang"
+            />
+        <action
+            android:id="@+id/action_dsmathang_to_product"
+            app:destination="@id/product"
+            app:popUpTo="@+id/dsmathang"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/shopping"
+        android:name="vn.edu.ntu.votrungha.navigationproduct.shopping"
+        android:label="fragment_shopping"
+        tools:layout="@layout/fragment_shopping" >
+        <action
+            android:id="@+id/action_shopping_to_comfirm"
+            app:destination="@id/comfirm"
+            app:popUpTo="@+id/shopping"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/comfirm"
+        android:name="vn.edu.ntu.votrungha.navigationproduct.comfirm"
+        android:label="fragment_comfirm"
+        tools:layout="@layout/fragment_comfirm" >
+        <action
+            android:id="@+id/action_comfirm_to_dsmathang"
+            app:destination="@id/dsmathang" />
+    </fragment>
+    <fragment
+        android:id="@+id/product"
+        android:name="vn.edu.ntu.votrungha.navigationproduct.product"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_product_to_dsmathang"
+            app:destination="@id/dsmathang"
+            app:popUpTo="@+id/product"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+</navigation>
